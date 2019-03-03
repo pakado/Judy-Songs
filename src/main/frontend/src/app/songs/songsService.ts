@@ -6,12 +6,12 @@ import {Observable} from "rxjs";
 @Injectable()
 export class SongsService {
 
-  private URL = "http://localhost:8080/api/songs";
+  private URL = "https://judysongs.herokuapp.com/api/songs";
   constructor(private http: HttpClient) {
 
   }
 
   getSongs() : Observable<any> {
-    return this.http.get("/api/songs");
+    return this.http.get(this.URL);
   }
 }
